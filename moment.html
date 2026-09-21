@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Moments - Memories Studio</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Montserrat:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" href="moment.css">
+
+</head>
+
+
+<body>
+
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+    <div class="brand">
+
+        <img
+            src="image/logo.png"
+            alt="Memories Studio Logo">
+
+        <h1>Memories Studio</h1>
+
+    </div>
+
+
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="moment.html"
+                   class="active">
+                    Moments
+                </a>
+            </li>
+
+            <li>
+                <a href="about.html">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="contact.html">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+</header>
+
+
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+    <section class="hero">
+
+        <p class="small-title">
+            MEMORIES STUDIO
+        </p>
+
+        <h2>
+            Our Little Moments
+        </h2>
+
+        <p class="hero-text">
+            Every picture holds a story.
+            Write down the moment and keep
+            it forever. ♡
+        </p>
+
+    </section>
+
+
+
+    <!-- ================= PHOTO BOOK ================= -->
+
+    <section class="photo-book">
+
+        <div
+            id="photoBook"
+            class="photo-book-grid">
+
+            <!-- Photos added by JavaScript -->
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- ================= EDIT MODAL ================= -->
+
+<div
+    id="momentModal"
+    class="modal">
+
+    <div class="modal-box">
+
+        <button
+            id="closeModal"
+            class="close-btn">
+            ×
+        </button>
+
+
+        <h2>
+            Add Your Moment
+        </h2>
+
+
+        <div class="modal-image-box">
+
+            <img
+                id="modalImage"
+                src=""
+                alt="Selected photo">
+
+        </div>
+
+
+        <label for="momentInput">
+            Your Moment
+        </label>
+
+
+        <textarea
+            id="momentInput"
+            placeholder="Write something beautiful about this moment..."></textarea>
+
+
+        <label>
+            Add a Sticker
+        </label>
+
+
+        <div
+            id="stickerButtons"
+            class="sticker-buttons">
+
+            <button data-sticker="✨">
+                ✨
+            </button>
+
+            <button data-sticker="💖">
+                💖
+            </button>
+
+            <button data-sticker="🌸">
+                🌸
+            </button>
+
+            <button data-sticker="📸">
+                📸
+            </button>
+
+            <button data-sticker="🦋">
+                🦋
+            </button>
+
+            <button data-sticker="⭐">
+                ⭐
+            </button>
+
+            <button data-sticker="🎀">
+                🎀
+            </button>
+
+            <button data-sticker="🤍">
+                🤍
+            </button>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                id="saveMoment"
+                class="save-btn">
+
+                Save Moment
+
+            </button>
+
+
+            <button
+                id="deletePhoto"
+                class="delete-btn">
+
+                Delete Photo
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        © 2026 Memories Studio.
+        All rights reserved.
+    </p>
+
+</footer>
+
+
+
+<script src="moment.js"></script>
+
+</body>
+
+</html>

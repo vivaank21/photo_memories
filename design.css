@@ -1,0 +1,1032 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --green: #33432b;
+    --dark-green: #25351f;
+    --cream: #f5eee4;
+    --cream-light: #fffaf3;
+    --pink: #d99ca5;
+    --pink-light: #f4dfe0;
+    --brown: #6d5545;
+    --text: #2f2a24;
+    --white: #ffffff;
+    --shadow: 0 20px 50px rgba(47, 42, 36, .12);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+/* ================= PRELOADER ================= */
+
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--cream-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+    opacity: 1;
+    visibility: visible;
+}
+
+.preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.preloader-content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.preloader-content video {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+
+/* ================= HEADER ================= */
+
+.site-header {
+    min-height: 88px;
+    background: var(--green);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,.15);
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand img {
+    width: 65px;
+    height: 65px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.brand h1 {
+    font-family: "Bodoni Moda", serif;
+    font-size: 28px;
+    line-height: 1;
+}
+
+.brand span {
+    font-size: 10px;
+    letter-spacing: 2px;
+    opacity: .75;
+}
+
+nav {
+    display: flex;
+    gap: 28px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    transition: .25s;
+}
+
+nav a:hover {
+    color: var(--pink);
+}
+
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 650px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.small-title {
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: var(--pink);
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: .9;
+    font-weight: 600;
+}
+
+.hero h2 em {
+    color: var(--green);
+    font-style: italic;
+}
+
+.hero-content > p:not(.small-title) {
+    margin: 30px 0;
+    max-width: 480px;
+    line-height: 1.8;
+    color: #685e54;
+}
+
+.hero-button,
+.view-gallery-button {
+    display: inline-block;
+    padding: 15px 28px;
+    background: var(--green);
+    color: white;
+    text-decoration: none;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+}
+
+.hero-button:hover,
+.view-gallery-button:hover {
+    background: var(--dark-green);
+    transform: translateY(-3px);
+}
+
+.hero-decoration {
+    width: 380px;
+    height: 450px;
+    position: relative;
+}
+
+.floating-card {
+    position: absolute;
+    width: 190px;
+    height: 240px;
+    background: white;
+    border: 10px solid white;
+    box-shadow: var(--shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+}
+
+.card-one {
+    left: 20px;
+    top: 80px;
+    transform: rotate(-12deg);
+    background: #dce7d5;
+}
+
+.card-two {
+    right: 10px;
+    top: 20px;
+    transform: rotate(9deg);
+    background: #f0d5d8;
+}
+
+.card-three {
+    right: 60px;
+    bottom: 20px;
+    transform: rotate(5deg);
+    background: #e9ded0;
+}
+
+
+/* ================= SECTION ================= */
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.section-heading p {
+    color: var(--pink);
+    letter-spacing: 3px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.section-heading h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: 42px;
+    margin-top: 8px;
+}
+
+
+/* ================= STUDIO ================= */
+
+.studio-section {
+    padding: 90px 5%;
+    background: var(--cream-light);
+}
+
+.studio-layout {
+    max-width: 1300px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: minmax(500px, 1.4fr) minmax(340px, .8fr);
+    gap: 35px;
+}
+
+
+/* CAMERA */
+
+.camera-panel {
+    background: white;
+    border-radius: 25px;
+    padding: 22px;
+    box-shadow: var(--shadow);
+}
+
+.camera-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.live-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #d66;
+    border-radius: 50%;
+    margin-right: 7px;
+}
+
+.camera-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background: #171717;
+    overflow: hidden;
+    border-radius: 17px;
+}
+
+#camera {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+#canvas {
+    display: none;
+}
+
+.frame-preview {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.none-frame {
+    border: 0 !important;
+    background: transparent !important;
+}
+
+
+/* ================= FRAMES ================= */
+
+.flower-frame {
+    border: 18px solid #b7d5df;
+    box-shadow:
+        inset 0 0 0 5px white,
+        inset 0 0 0 12px #c5e2ea;
+}
+
+.flower-frame::before {
+    content: "🌸  🌼  🌸";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.flower-frame::after {
+    content: "🌸  🌼  🌸";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.gingham-frame {
+    border: 22px solid #b9d7df;
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,.35) 50%, transparent 50%),
+        linear-gradient(rgba(255,255,255,.35) 50%, transparent 50%);
+    background-size: 25px 25px;
+}
+
+.stars-frame {
+    border: 18px solid #8eb6c8;
+}
+
+.stars-frame::before {
+    content: "✦  ✧  ★  ✧  ✦";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.stars-frame::after {
+    content: "✦  ✧  ★  ✧  ✦";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.bunny-frame {
+    border: 15px solid #ead9db;
+}
+
+.bunny-frame::before {
+    content: "🎀";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 50px;
+}
+
+.cherry-frame {
+    border: 17px solid #f1c9ce;
+}
+
+.cherry-frame::before {
+    content: "🍒  🍒  🍒  🍒";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 22px;
+}
+
+.cherry-frame::after {
+    content: "🍒  🍒  🍒  🍒";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 22px;
+}
+
+.heart-frame {
+    border: 18px solid #e9b7bd;
+}
+
+.heart-frame::before {
+    content: "♥  ♡  ♥  ♡  ♥";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #b85d6a;
+    font-size: 25px;
+}
+
+.heart-frame::after {
+    content: "♥  ♡  ♥  ♡  ♥";
+    position: absolute;
+    bottom: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #b85d6a;
+    font-size: 25px;
+}
+
+.lips-frame {
+    border: 18px solid #f0c4ca;
+}
+
+.lips-frame::before {
+    content: "💋  💋  💋";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+.pink-frame {
+    border: 18px solid #e9b8c2;
+    background-image:
+        linear-gradient(90deg, rgba(255,255,255,.35) 50%, transparent 50%),
+        linear-gradient(rgba(255,255,255,.35) 50%, transparent 50%);
+    background-size: 24px 24px;
+}
+
+.redbow-frame {
+    border: 18px solid #b94752;
+}
+
+.redbow-frame::before {
+    content: "🎀";
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px;
+}
+
+
+/* Camera frame classes */
+
+#framePreview {
+    border-style: solid;
+    border-width: 0;
+}
+
+#framePreview.flower-frame,
+#framePreview.gingham-frame,
+#framePreview.stars-frame,
+#framePreview.bunny-frame,
+#framePreview.cherry-frame,
+#framePreview.heart-frame,
+#framePreview.lips-frame,
+#framePreview.pink-frame,
+#framePreview.redbow-frame {
+    position: absolute;
+}
+
+
+/* CORNERS */
+
+.corner {
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border-color: white;
+    opacity: .8;
+    z-index: 10;
+}
+
+.top-left {
+    top: 14px;
+    left: 14px;
+    border-top: 2px solid;
+    border-left: 2px solid;
+}
+
+.top-right {
+    top: 14px;
+    right: 14px;
+    border-top: 2px solid;
+    border-right: 2px solid;
+}
+
+.bottom-left {
+    bottom: 14px;
+    left: 14px;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+}
+
+.bottom-right {
+    bottom: 14px;
+    right: 14px;
+    border-bottom: 2px solid;
+    border-right: 2px solid;
+}
+
+
+/* COUNTDOWN */
+
+.countdown {
+    position: absolute;
+    inset: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 100px;
+    font-family: "Bodoni Moda", serif;
+    text-shadow: 0 5px 20px black;
+    pointer-events: none;
+}
+
+
+/* BUTTONS */
+
+.camera-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 18px;
+}
+
+button,
+select {
+    font-family: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.primary-button,
+.secondary-button,
+.capture-button,
+.danger-button {
+    border: 0;
+    border-radius: 30px;
+    padding: 12px 17px;
+    font-size: 11px;
+    font-weight: 700;
+    transition: .25s;
+}
+
+.primary-button {
+    background: var(--green);
+    color: white;
+}
+
+.secondary-button {
+    background: #eee7df;
+    color: var(--text);
+}
+
+.capture-button {
+    background: var(--pink);
+    color: white;
+}
+
+.capture-button span {
+    font-size: 18px;
+}
+
+.danger-button {
+    background: #f2d6d6;
+    color: #914c4c;
+}
+
+.primary-button:hover,
+.capture-button:hover,
+.secondary-button:hover,
+.danger-button:hover {
+    transform: translateY(-2px);
+}
+
+button:disabled {
+    opacity: .45;
+    cursor: not-allowed;
+}
+
+.camera-message {
+    font-size: 11px;
+    margin-top: 12px;
+    color: #867a70;
+}
+
+
+/* ================= CONTROLS ================= */
+
+.control-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.control-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 8px 30px rgba(47,42,36,.07);
+}
+
+.control-card h3 {
+    font-family: "Bodoni Moda", serif;
+    font-size: 20px;
+    margin-bottom: 14px;
+}
+
+.option-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.option-grid.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.option {
+    border: 1px solid #e4dcd3;
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.option.active,
+.option:hover {
+    background: var(--green);
+    color: white;
+    border-color: var(--green);
+}
+
+
+/* FILTERS */
+
+.filter-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.filter-button {
+    border: 1px solid #e6ded5;
+    background: white;
+    border-radius: 10px;
+    padding: 7px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 10px;
+    font-weight: 600;
+}
+
+.filter-button.active {
+    border-color: var(--green);
+    background: #eef1eb;
+}
+
+.filter-preview {
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #d6aaa0, #7c8e73);
+}
+
+.vintage {
+    filter: sepia(.6);
+}
+
+.bw {
+    filter: grayscale(1);
+}
+
+.warm {
+    filter: saturate(1.3) sepia(.15);
+}
+
+.cool {
+    filter: hue-rotate(15deg) saturate(.8);
+}
+
+.sepia {
+    filter: sepia(1);
+}
+
+.pink {
+    filter: hue-rotate(320deg) saturate(.8);
+}
+
+.dreamy {
+    filter: brightness(1.1) saturate(.7);
+}
+
+.cinematic {
+    filter: contrast(1.25) saturate(.8);
+}
+
+.matte {
+    filter: contrast(.8) brightness(1.05);
+}
+
+
+/* FRAME GRID */
+
+.frame-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+}
+
+.frame-button {
+    border: 1px solid #e5ddd5;
+    background: white;
+    padding: 8px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 9px;
+    font-weight: 600;
+    text-align: left;
+}
+
+.frame-button.active {
+    border-color: var(--green);
+    background: #eef1eb;
+}
+
+.mini-frame {
+    width: 42px;
+    height: 45px;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #eee;
+}
+
+.mini-frame.flower-frame,
+.mini-frame.gingham-frame,
+.mini-frame.stars-frame,
+.mini-frame.bunny-frame,
+.mini-frame.cherry-frame,
+.mini-frame.heart-frame,
+.mini-frame.lips-frame,
+.mini-frame.pink-frame,
+.mini-frame.redbow-frame {
+    border-width: 6px;
+}
+
+
+/* SELECT */
+
+#layoutSelect {
+    width: 100%;
+    border: 1px solid #e1d8ce;
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    outline: none;
+}
+
+
+/* ================= GALLERY PREVIEW ================= */
+
+.gallery-preview-section {
+    padding: 90px 5%;
+    text-align: center;
+}
+
+.recent-gallery {
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+.recent-item {
+    background: white;
+    padding: 8px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.recent-item img {
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.empty-gallery {
+    grid-column: 1/-1;
+    padding: 50px;
+    background: white;
+    border-radius: 20px;
+    color: #8a7d72;
+}
+
+
+/* ================= ABOUT ================= */
+
+.info-section {
+    padding: 100px 10%;
+    background: var(--green);
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.info-section h2,
+.contact-section h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: 48px;
+    line-height: 1.1;
+}
+
+.info-section > p {
+    line-height: 2;
+    opacity: .8;
+}
+
+
+/* ================= CONTACT ================= */
+
+.contact-section {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.contact-section p:last-child {
+    margin-top: 15px;
+    color: #756a61;
+}
+
+
+/* ================= MODAL ================= */
+
+.modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(20,25,17,.65);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    padding: 20px;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    width: min(430px, 100%);
+    background: var(--cream-light);
+    border-radius: 25px;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow);
+}
+
+.modal-icon {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+.modal-content h2 {
+    font-family: "Bodoni Moda", serif;
+    font-size: 30px;
+}
+
+.modal-content p {
+    margin: 15px 0 25px;
+    color: #766c62;
+    line-height: 1.7;
+}
+
+.modal-close {
+    position: absolute;
+    right: 18px;
+    top: 15px;
+    background: transparent;
+    border: 0;
+    font-size: 30px;
+    color: #756a61;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 950px) {
+
+    .site-header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+
+    .hero-decoration {
+        transform: scale(.8);
+    }
+
+    .studio-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .info-section {
+        grid-template-columns: 1fr;
+    }
+
+    .recent-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .brand h1 {
+        font-size: 22px;
+    }
+
+    .brand img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+    }
+
+    .hero h2 {
+        font-size: 55px;
+    }
+
+    .hero-decoration {
+        width: 300px;
+        transform: scale(.7);
+    }
+
+    .studio-section {
+        padding: 60px 15px;
+    }
+
+    .camera-panel {
+        padding: 12px;
+    }
+
+    .camera-buttons button {
+        flex: 1 1 45%;
+    }
+
+    .recent-gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .info-section h2,
+    .contact-section h2 {
+        font-size: 38px;
+    }
+}

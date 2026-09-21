@@ -1,0 +1,709 @@
+/* =========================================
+   MEMORIES STUDIO - MOMENTS PAGE
+   ========================================= */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    background: #2008;
+    color: #dec59e;
+
+    font-family: "Montserrat", sans-serif;
+
+    min-height: 100vh;
+
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+
+    width: 100%;
+
+    padding: 18px 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    background: #33452b;
+
+    border-bottom: 1px solid
+        rgba(222, 197, 158, 0.25);
+
+}
+
+
+/* BRAND */
+
+.brand {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.brand img {
+
+    width: 50px;
+
+    height: 50px;
+
+    object-fit: contain;
+
+}
+
+
+.brand h1 {
+
+    font-family: "Bodoni Moda", serif;
+
+    color: #dec59e;
+
+    font-size: 25px;
+
+    letter-spacing: 1px;
+
+}
+
+
+/* NAVIGATION */
+
+nav ul {
+
+    list-style: none;
+
+    display: flex;
+
+    gap: 28px;
+
+}
+
+
+nav a {
+
+    text-decoration: none;
+
+    color: #dec59e;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+
+}
+
+
+nav a:hover,
+nav a.active {
+
+    color: #c4866b;
+
+}
+
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+
+    text-align: center;
+
+    padding: 65px 20px 40px;
+
+}
+
+
+.small-title {
+
+    font-size: 12px;
+
+    letter-spacing: 4px;
+
+    color: #c4866b;
+
+    margin-bottom: 12px;
+
+}
+
+
+.hero h2 {
+
+    font-family: "Bodoni Moda", serif;
+
+    font-size: clamp(35px, 6vw, 65px);
+
+    color: #dec59e;
+
+    font-weight: 400;
+
+    margin-bottom: 15px;
+
+}
+
+
+.hero-text {
+
+    max-width: 550px;
+
+    margin: auto;
+
+    line-height: 1.7;
+
+    color: #dec59e;
+
+    opacity: 0.85;
+
+}
+
+
+/* =========================================
+   PHOTO BOOK
+   ========================================= */
+
+.photo-book {
+
+    width: min(1200px, 92%);
+
+    margin: auto;
+
+    padding-bottom: 70px;
+
+}
+
+
+.photo-book-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(270px, 1fr));
+
+    gap: 35px;
+
+}
+
+
+/* =========================================
+   PHOTO CARD
+   ========================================= */
+
+.photo-card {
+
+    background: #dec59e;
+
+    padding: 14px 14px 20px;
+
+    border-radius: 5px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.35);
+
+    transform: rotate(-1deg);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+
+}
+
+
+.photo-card:nth-child(even) {
+
+    transform: rotate(1.2deg);
+
+}
+
+
+.photo-card:hover {
+
+    transform:
+        translateY(-8px)
+        rotate(0deg);
+
+    box-shadow:
+        0 25px 45px rgba(0,0,0,0.45);
+
+}
+
+
+/* IMAGE */
+
+.photo-card img {
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+/* =========================================
+   PHOTO INFORMATION
+   ========================================= */
+
+.photo-info {
+
+    text-align: center;
+
+    padding-top: 15px;
+
+    color: #33452b;
+
+}
+
+
+.photo-info h3 {
+
+    font-family: "Bodoni Moda", serif;
+
+    font-size: 19px;
+
+    margin-bottom: 7px;
+
+}
+
+
+.moment {
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    min-height: 20px;
+
+}
+
+
+.sticker {
+
+    font-size: 25px;
+
+    margin-top: 8px;
+
+}
+
+
+/* =========================================
+   CARD BUTTON
+   ========================================= */
+
+.edit-btn {
+
+    margin-top: 13px;
+
+    border: none;
+
+    background: #6a784d;
+
+    color: #dec59e;
+
+    padding: 9px 18px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    font-family: "Montserrat", sans-serif;
+
+    transition: 0.3s;
+
+}
+
+
+.edit-btn:hover {
+
+    background: #c4866b;
+
+    color: #33452b;
+
+}
+
+
+/* =========================================
+   EMPTY MESSAGE
+   ========================================= */
+
+.empty {
+
+    grid-column: 1 / -1;
+
+    text-align: center;
+
+    padding: 70px 20px;
+
+    border: 1px dashed
+        rgba(222,197,158,0.35);
+
+    border-radius: 20px;
+
+    background: #33452b;
+
+}
+
+
+.empty h3 {
+
+    font-family: "Bodoni Moda", serif;
+
+    font-size: 28px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.empty p {
+
+    opacity: 0.8;
+
+    font-size: 14px;
+
+}
+
+
+/* =========================================
+   MODAL
+   ========================================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        rgba(32, 69, 43, 0.88);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 1000;
+
+}
+
+
+.modal.show {
+
+    display: flex;
+
+}
+
+
+.modal-box {
+
+    width: min(500px, 100%);
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #dec59e;
+
+    color: #33452b;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    position: relative;
+
+}
+
+
+.modal-box h2 {
+
+    font-family: "Bodoni Moda", serif;
+
+    text-align: center;
+
+    font-size: 28px;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* CLOSE */
+
+.close-btn {
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 10px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #33452b;
+
+    font-size: 30px;
+
+    cursor: pointer;
+
+}
+
+
+/* MODAL IMAGE */
+
+.modal-image-box {
+
+    margin-bottom: 18px;
+
+}
+
+
+.modal-image-box img {
+
+    width: 100%;
+
+    max-height: 280px;
+
+    object-fit: cover;
+
+    border-radius: 12px;
+
+}
+
+
+/* LABEL */
+
+.modal-box label {
+
+    display: block;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    margin: 12px 0 7px;
+
+}
+
+
+/* TEXTAREA */
+
+textarea {
+
+    width: 100%;
+
+    min-height: 120px;
+
+    resize: vertical;
+
+    border: 2px solid #6a784d;
+
+    border-radius: 12px;
+
+    padding: 12px;
+
+    font-family: "Montserrat", sans-serif;
+
+    background: #fffaf0;
+
+    color: #33452b;
+
+    outline: none;
+
+}
+
+
+textarea:focus {
+
+    border-color: #c4866b;
+
+}
+
+
+/* =========================================
+   STICKERS
+   ========================================= */
+
+.sticker-buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+}
+
+
+.sticker-buttons button {
+
+    width: 48px;
+
+    height: 42px;
+
+    border-radius: 12px;
+
+    border: 1px solid #6a784d;
+
+    background: #6a784d;
+
+    font-size: 20px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+
+.sticker-buttons button:hover {
+
+    transform: scale(1.08);
+
+    background: #c4866b;
+
+}
+
+
+/* =========================================
+   MODAL ACTIONS
+   ========================================= */
+
+.modal-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 22px;
+
+}
+
+
+.save-btn,
+.delete-btn {
+
+    flex: 1;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    font-family: "Montserrat", sans-serif;
+
+    font-weight: 600;
+
+}
+
+
+.save-btn {
+
+    background: #33452b;
+
+    color: #dec59e;
+
+}
+
+
+.save-btn:hover {
+
+    background: #6a784d;
+
+}
+
+
+.delete-btn {
+
+    background: #c4866b;
+
+    color: #33452b;
+
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    background: #33452b;
+
+    color: #dec59e;
+
+    font-size: 12px;
+
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    header {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+
+    nav ul {
+
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+    }
+
+
+    .hero {
+
+        padding-top: 45px;
+
+    }
+
+
+    .photo-book-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}

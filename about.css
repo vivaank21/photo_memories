@@ -1,0 +1,183 @@
+/* ========================================
+   ABOUT US PAGE
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #fff8f5;
+    color: #3d3030;
+}
+
+
+/* HEADER */
+
+.header {
+    width: 100%;
+    padding: 20px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #ffffff;
+
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+}
+
+.logo h2 {
+    color: #b85c70;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #4b3a3a;
+    font-weight: 500;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b85c70;
+}
+
+
+/* ABOUT SECTION */
+
+.about-page {
+    min-height: calc(100vh - 150px);
+    padding: 80px 8%;
+}
+
+
+/* INTRO */
+
+.about-content {
+    max-width: 850px;
+    margin: auto;
+    text-align: center;
+}
+
+.small-title {
+    color: #b85c70;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 4px;
+}
+
+.about-content h1 {
+    font-size: 48px;
+    margin: 15px 0;
+    color: #432f35;
+}
+
+.about-content .intro {
+    font-size: 21px;
+    line-height: 1.7;
+    color: #b85c70;
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+
+/* CARDS */
+
+.about-cards {
+    max-width: 1100px;
+    margin: 60px auto 0;
+
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+
+    flex-wrap: wrap;
+}
+
+.about-card {
+    width: 300px;
+    padding: 35px 25px;
+
+    text-align: center;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.08);
+
+    transition: 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-8px);
+}
+
+.about-card .icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.about-card h3 {
+    color: #b85c70;
+    margin-bottom: 12px;
+}
+
+.about-card p {
+    line-height: 1.6;
+    color: #666;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 20px;
+    text-align: center;
+    background: #432f35;
+    color: white;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    .header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .about-content h1 {
+        font-size: 36px;
+    }
+
+    .about-content .intro {
+        font-size: 18px;
+    }
+
+    .about-card {
+        width: 100%;
+        max-width: 350px;
+    }
+}

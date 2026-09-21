@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memories Studio | Photobooth</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="design.css">
+</head>
+
+<body>
+
+<!-- PRELOADER VIDEO -->
+<div class="preloader" id="preloader">
+    <div class="preloader-content">
+        <video id="preloaderVideo" autoplay muted playsinline>
+            <source src="image/preloader.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
+
+<header class="site-header">
+    <div class="brand">
+        <img src="image/logo.png" alt="Memories Studio Logo">
+        <div>
+            <h1>Memories Studio</h1>
+            <span>Capture • Create • Remember</span>
+        </div>
+    </div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#photobooth">Photobooth</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+
+<main>
+
+<section id="home" class="hero">
+    <div class="hero-content">
+        <p class="small-title">WELCOME TO</p>
+        <h2>Memories<br><em>Studio</em></h2>
+
+        <p>
+            Turn simple moments into beautiful memories.
+            Take your photo, choose a frame, add your style
+            and save it forever.
+        </p>
+
+        <a href="#photobooth" class="hero-button">
+            Start Creating ✨
+        </a>
+    </div>
+
+    <div class="hero-decoration">
+        <div class="floating-card card-one">♡</div>
+        <div class="floating-card card-two">✦</div>
+        <div class="floating-card card-three">📸</div>
+    </div>
+</section>
+
+
+<section id="photobooth" class="studio-section">
+
+    <div class="section-heading">
+        <p>YOUR PERSONAL PHOTO BOOTH</p>
+        <h2>Create Your Memory</h2>
+    </div>
+
+
+    <div class="studio-layout">
+
+        <!-- CAMERA -->
+        <div class="camera-panel">
+
+            <div class="camera-title">
+                <span class="live-dot"></span>
+                CAMERA PREVIEW
+            </div>
+
+            <div class="camera-box" id="cameraBox">
+
+                <video id="camera" autoplay playsinline></video>
+
+                <canvas id="canvas"></canvas>
+
+                <div id="countdown" class="countdown"></div>
+
+                <!-- FRAME PREVIEW -->
+                <div id="framePreview" class="frame-preview none-frame"></div>
+
+                <!-- decorative corners -->
+                <div class="corner top-left"></div>
+                <div class="corner top-right"></div>
+                <div class="corner bottom-left"></div>
+                <div class="corner bottom-right"></div>
+            </div>
+
+
+            <div class="camera-buttons">
+                <button id="startCamera" class="primary-button">
+                    📷 Start Camera
+                </button>
+
+                <button id="takePhoto" class="capture-button" disabled>
+                    <span>●</span> Take Photo
+                </button>
+
+                <button id="resetPhoto" class="secondary-button">
+                    Reset
+                </button>
+
+                <button id="deletePhoto" class="danger-button">
+                    Delete
+                </button>
+
+                <button id="downloadPhoto" class="secondary-button">
+                    Download
+                </button>
+            </div>
+
+            <p id="cameraMessage" class="camera-message">
+                Click "Start Camera" to begin.
+            </p>
+        </div>
+
+
+        <!-- CONTROLS -->
+        <aside class="control-panel">
+
+            <div class="control-card">
+
+                <h3>📸 Photo Count</h3>
+
+                <div class="option-grid four">
+                    <button class="option active" data-count="1">1</button>
+                    <button class="option" data-count="2">2</button>
+                    <button class="option" data-count="3">3</button>
+                    <button class="option" data-count="4">4</button>
+                </div>
+
+            </div>
+
+
+            <div class="control-card">
+
+                <h3>⏱ Timer</h3>
+
+                <div class="option-grid">
+                    <button class="option active" data-timer="0">Off</button>
+                    <button class="option" data-timer="3">3 sec</button>
+                    <button class="option" data-timer="5">5 sec</button>
+                    <button class="option" data-timer="10">10 sec</button>
+                </div>
+
+            </div>
+
+
+            <div class="control-card">
+
+                <h3>🎨 Filter</h3>
+
+                <div class="filter-list">
+
+                    <button class="filter-button active" data-filter="normal">
+                        <span class="filter-preview normal"></span>
+                        Normal
+                    </button>
+
+                    <button class="filter-button" data-filter="vintage">
+                        <span class="filter-preview vintage"></span>
+                        Vintage
+                    </button>
+
+                    <button class="filter-button" data-filter="bw">
+                        <span class="filter-preview bw"></span>
+                        B&W
+                    </button>
+
+                    <button class="filter-button" data-filter="warm">
+                        <span class="filter-preview warm"></span>
+                        Warm
+                    </button>
+
+                    <button class="filter-button" data-filter="cool">
+                        <span class="filter-preview cool"></span>
+                        Cool
+                    </button>
+
+                    <button class="filter-button" data-filter="sepia">
+                        <span class="filter-preview sepia"></span>
+                        Sepia
+                    </button>
+
+                    <button class="filter-button" data-filter="pink">
+                        <span class="filter-preview pink"></span>
+                        Pink
+                    </button>
+
+                    <button class="filter-button" data-filter="dreamy">
+                        <span class="filter-preview dreamy"></span>
+                        Dreamy
+                    </button>
+
+                    <button class="filter-button" data-filter="cinematic">
+                        <span class="filter-preview cinematic"></span>
+                        Cinematic
+                    </button>
+
+                    <button class="filter-button" data-filter="matte">
+                        <span class="filter-preview matte"></span>
+                        Matte
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="control-card">
+
+                <h3>🖼 Frame</h3>
+
+                <div class="frame-grid">
+
+                    <button class="frame-button active" data-frame="none">
+                        <span class="mini-frame none-frame"></span>
+                        None
+                    </button>
+
+                    <button class="frame-button" data-frame="flower">
+                        <span class="mini-frame flower-frame">
+                            🌸
+                        </span>
+                        Blue Flower
+                    </button>
+
+                    <button class="frame-button" data-frame="gingham">
+                        <span class="mini-frame gingham-frame"></span>
+                        Gingham
+                    </button>
+
+                    <button class="frame-button" data-frame="stars">
+                        <span class="mini-frame stars-frame">✦ ✧</span>
+                        Stars
+                    </button>
+
+                    <button class="frame-button" data-frame="bunny">
+                        <span class="mini-frame bunny-frame">🎀</span>
+                        Bunny Bow
+                    </button>
+
+                    <button class="frame-button" data-frame="cherry">
+                        <span class="mini-frame cherry-frame">🍒</span>
+                        Cherry
+                    </button>
+
+                    <button class="frame-button" data-frame="heart">
+                        <span class="mini-frame heart-frame">♥</span>
+                        Hearts
+                    </button>
+
+                    <button class="frame-button" data-frame="lips">
+                        <span class="mini-frame lips-frame">💋</span>
+                        Lips
+                    </button>
+
+                    <button class="frame-button" data-frame="pink">
+                        <span class="mini-frame pink-frame">♡</span>
+                        Pink Grid
+                    </button>
+
+                    <button class="frame-button" data-frame="redbow">
+                        <span class="mini-frame redbow-frame">🎀</span>
+                        Red Bow
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="control-card">
+
+                <h3>🧩 Layout</h3>
+
+                <select id="layoutSelect">
+
+                    <option value="single">
+                        Single Photo
+                    </option>
+
+                    <option value="vertical">
+                        Classic Vertical Strip
+                    </option>
+
+                    <option value="grid">
+                        2 × 2 Grid
+                    </option>
+
+                    <option value="horizontal">
+                        Horizontal Strip
+                    </option>
+
+                    <option value="large3">
+                        Large + 3 Small
+                    </option>
+
+                    <option value="vertical3">
+                        1 Large + 3 Vertical
+                    </option>
+
+                    <option value="diamond">
+                        Diamond Creative
+                    </option>
+
+                    <option value="polaroid">
+                        Four Polaroid Cards
+                    </option>
+
+                    <option value="collage">
+                        Collage Style
+                    </option>
+
+                    <option value="film">
+                        Film Strip
+                    </option>
+
+                </select>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+<section class="gallery-preview-section">
+
+    <div class="section-heading">
+        <p>YOUR MEMORIES</p>
+        <h2>Recent Photos</h2>
+    </div>
+
+    <div id="recentGallery" class="recent-gallery"></div>
+
+    <a href="gallery.html" class="view-gallery-button">
+        View Full Gallery →
+    </a>
+
+</section>
+
+
+<section id="about" class="info-section">
+
+    <div>
+        <p class="small-title">ABOUT US</p>
+        <h2>Every picture tells a story.</h2>
+    </div>
+
+    <p>
+        Memories Studio is designed to make taking beautiful
+        photos simple, creative and fun. Choose your favorite
+        filter, frame and layout and create something worth
+        keeping.
+    </p>
+
+</section>
+
+
+<section id="contact" class="contact-section">
+
+    <p class="small-title">GET IN TOUCH</p>
+
+    <h2>Let's create memories.</h2>
+
+    <p>
+        Make your next moment special with Memories Studio.
+    </p>
+
+</section>
+
+</main>
+
+
+<!-- MESSAGE MODAL -->
+<div id="messageModal" class="modal">
+    <div class="modal-content">
+
+        <button id="closeModal" class="modal-close">
+            ×
+        </button>
+
+        <div class="modal-icon">✨</div>
+
+        <h2 id="modalTitle">
+            Memories Studio
+        </h2>
+
+        <p id="modalMessage">
+            Your message goes here.
+        </p>
+
+        <button id="modalOk" class="primary-button">
+            Okay
+        </button>
+
+    </div>
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

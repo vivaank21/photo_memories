@@ -1,0 +1,718 @@
+/* =========================================
+   MEMORIES STUDIO - GALLERY CSS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #6a784d 0%,
+            #33452b 45%,
+            #26361f 100%
+        );
+
+    color: #dec59e;
+
+    font-family: "Montserrat", sans-serif;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    width: 100%;
+
+    padding: 18px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #33452b;
+
+    border-bottom: 1px solid rgba(222, 197, 158, 0.25);
+}
+
+
+/* BRAND */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand img {
+    width: 48px;
+    height: 48px;
+
+    object-fit: contain;
+
+    border-radius: 50%;
+}
+
+.brand h1 {
+    font-family: "Bodoni Moda", serif;
+
+    font-size: 24px;
+
+    color: #dec59e;
+
+    letter-spacing: 1px;
+}
+
+
+/* NAVIGATION */
+
+nav ul {
+    display: flex;
+
+    list-style: none;
+
+    gap: 25px;
+}
+
+nav a {
+    text-decoration: none;
+
+    color: #dec59e;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+    color: #c4866b;
+}
+
+
+/* =========================================
+   PAGE TITLE
+========================================= */
+
+.page-title {
+    margin: 35px 0 15px;
+
+    text-align: center;
+
+    font-family: "Bodoni Moda", serif;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    font-size: clamp(20px, 3vw, 30px);
+
+    color: #dec59e;
+}
+
+
+/* =========================================
+   MAIN LAYOUT
+========================================= */
+
+.gallery-layout {
+    width: min(1200px, 92vw);
+
+    margin: 0 auto 40px;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   TOOLBAR
+========================================= */
+
+.toolbar {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 16px;
+
+    border-radius: 15px;
+
+    background: #6a784d;
+
+    border: 1px solid rgba(222, 197, 158, 0.25);
+
+    text-align: center;
+}
+
+.toolbar .hint {
+    font-size: 14px;
+
+    color: #dec59e;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   GALLERY GRID
+========================================= */
+
+.gallery-grid {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 18px;
+}
+
+.card-wrap {
+    grid-column: span 12;
+}
+
+
+@media (min-width: 700px) {
+
+    .card-wrap {
+        grid-column: span 6;
+    }
+
+}
+
+
+@media (min-width: 1050px) {
+
+    .card-wrap {
+        grid-column: span 4;
+    }
+
+}
+
+
+/* =========================================
+   GALLERY CARD
+========================================= */
+
+.gallery-card {
+    cursor: pointer;
+
+    padding: 14px;
+
+    border-radius: 18px;
+
+    background: #33452b;
+
+    border: 1px solid rgba(222, 197, 158, 0.2);
+
+    transition: 0.25s ease;
+}
+
+.gallery-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #c4866b;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.25);
+}
+
+.gallery-card.active {
+    border-color: #c4866b;
+
+    box-shadow:
+        0 0 0 2px rgba(196, 134, 107, 0.35);
+}
+
+
+/* =========================================
+   POLAROID
+========================================= */
+
+.polaroid {
+    background: #dec59e;
+
+    padding: 10px;
+
+    border-radius: 15px;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3);
+
+    overflow: hidden;
+}
+
+.polaroid-img {
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 10px;
+}
+
+.polaroid-caption {
+    padding: 12px 8px 8px;
+
+    text-align: center;
+
+    color: #33452b;
+}
+
+
+/* MOMENT */
+
+.moment-text {
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    min-height: 35px;
+
+    word-break: break-word;
+
+    color: #33452b;
+}
+
+
+/* STICKER INFO */
+
+.sticker-info {
+    margin-top: 8px;
+
+    font-size: 11px;
+
+    opacity: 0.75;
+}
+
+
+/* CARD FOOTER */
+
+.mini-actions {
+    margin-top: 10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    font-size: 12px;
+
+    color: #dec59e;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   EDITOR
+========================================= */
+
+.editor {
+    padding: 20px;
+
+    border-radius: 20px;
+
+    background: #33452b;
+
+    border: 1px solid rgba(222, 197, 158, 0.2);
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.editor-title {
+    margin-bottom: 15px;
+
+    font-family: "Bodoni Moda", serif;
+
+    font-size: 21px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    color: #dec59e;
+}
+
+
+.editor-grid {
+    display: grid;
+
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+}
+
+
+@media (min-width: 900px) {
+
+    .editor-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+}
+
+
+/* =========================================
+   FORM
+========================================= */
+
+.field {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+    margin-bottom: 15px;
+}
+
+label {
+    font-size: 13px;
+
+    color: #dec59e;
+}
+
+
+textarea {
+    width: 100%;
+
+    min-height: 120px;
+
+    resize: vertical;
+
+    padding: 13px;
+
+    border-radius: 14px;
+
+    border: 1px solid rgba(222, 197, 158, 0.3);
+
+    background: #6a784d;
+
+    color: #dec59e;
+
+    font-family: "Montserrat", sans-serif;
+
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #c4866b;
+
+    box-shadow:
+        0 0 0 2px rgba(196, 134, 107, 0.2);
+}
+
+textarea::placeholder {
+    color: #dec59e;
+
+    opacity: 0.65;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.editor-buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 10px;
+}
+
+.btn {
+    padding: 11px 14px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(222, 197, 158, 0.3);
+
+    background: #6a784d;
+
+    color: #dec59e;
+
+    font-family: "Montserrat", sans-serif;
+
+    cursor: pointer;
+
+    transition: 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+
+    background: #c4866b;
+
+    color: #33452b;
+
+    border-color: #c4866b;
+}
+
+.btn:disabled {
+    opacity: 0.4;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+.btn.danger {
+    background: rgba(196, 134, 107, 0.25);
+
+    border-color: #c4866b;
+}
+
+.btn.danger:hover {
+    background: #c4866b;
+}
+
+
+/* =========================================
+   STICKERS
+========================================= */
+
+.sticker-row {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 9px;
+}
+
+.sticker-btn {
+    padding: 9px 12px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(222, 197, 158, 0.25);
+
+    background: #6a784d;
+
+    color: #dec59e;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    transition: 0.2s;
+}
+
+.sticker-btn:hover {
+    transform: scale(1.08);
+
+    background: #c4866b;
+}
+
+
+/* =========================================
+   PRINT PREVIEW
+========================================= */
+
+.print-stage {
+    padding: 12px;
+
+    border-radius: 18px;
+
+    background: #dec59e;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.photo-holder {
+    position: relative;
+
+    width: 100%;
+
+    aspect-ratio: 4 / 3;
+
+    overflow: hidden;
+
+    border-radius: 12px;
+
+    background: #6a784d;
+}
+
+.print-stage img {
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: none;
+}
+
+
+/* =========================================
+   STICKER OVERLAY
+========================================= */
+
+.sticker-overlay {
+    position: absolute;
+
+    left: 50%;
+    top: 18px;
+
+    transform: translateX(-50%);
+
+    font-size: 35px;
+
+    filter:
+        drop-shadow(0 5px 8px rgba(0, 0, 0, 0.3));
+}
+
+.sticker-overlay.bottom {
+    top: auto;
+
+    bottom: 12px;
+}
+
+
+/* =========================================
+   PRINT CAPTION
+========================================= */
+
+.print-caption {
+    margin-top: 10px;
+
+    padding: 8px;
+
+    text-align: center;
+
+    color: #33452b;
+}
+
+.print-moment {
+    min-height: 40px;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+    word-break: break-word;
+}
+
+.studio-name {
+    margin-top: 8px;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 1px;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================
+   EMPTY GALLERY
+========================================= */
+
+.empty {
+    grid-column: span 12;
+
+    padding: 50px 20px;
+
+    text-align: center;
+
+    border-radius: 18px;
+
+    border: 1px dashed rgba(222, 197, 158, 0.35);
+
+    background: #6a784d;
+
+    color: #dec59e;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   NOTE
+========================================= */
+
+.note {
+    margin-top: 10px;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+
+    color: #dec59e;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    padding: 25px;
+
+    text-align: center;
+
+    background: #33452b;
+
+    border-top: 1px solid rgba(222, 197, 158, 0.2);
+
+    color: #dec59e;
+
+    font-size: 12px;
+}
+
+
+/* =========================================
+   MOBILE HEADER
+========================================= */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+
+    nav ul {
+        gap: 15px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .brand h1 {
+        font-size: 20px;
+    }
+
+    .editor-buttons {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+}
